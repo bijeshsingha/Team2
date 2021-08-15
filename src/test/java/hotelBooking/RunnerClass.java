@@ -28,7 +28,6 @@ public class RunnerClass extends Base {
 		report.attachReporter(new ExtentHtmlReporter("module_name.html"));
 	}
 
-
 	// To verify we are on search result page
 	@Test(dependsOnMethods = "f",description = "To verify results are present")
 	public void resultPage() throws Exception {

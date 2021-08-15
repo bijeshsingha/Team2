@@ -44,7 +44,7 @@ public class HSearchTest extends Base {
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click(); //HIT SEARCH
 		  wt.until(ExpectedConditions.alertIsPresent());
 		  driver.switchTo().alert().accept();//ACCEPT ALERT  
-		  tc = report.createTest("TestCase01");
+		  tc = report.createTest("TestCase02");
 		  tc.info("Test Case Passed"); // passing step information
 	  }
 	  @Test(enabled = true, dependsOnMethods="checkCity", description = "To verify same check in check out date inputs")
@@ -56,7 +56,7 @@ public class HSearchTest extends Base {
 		  driver.findElement(By.id(prop.getProperty("close-room"))).click();// CLOSE ROOMS OPTION
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();//HIT SEARCH
 		  driver.switchTo().alert().accept();//ACCEPT ALERT
-		  tc = report.createTest("TestCase01");
+		  tc = report.createTest("TestCase03");
 		  tc.info("Test Case Passed"); // passing step information
 	  }
 	  @Test(enabled = true, dependsOnMethods="sameDates", description = "To verify if the calander disables dates before yesterday")
@@ -75,7 +75,7 @@ public class HSearchTest extends Base {
 			  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();//HIT SEARCH
 			  driver.findElement(By.id(prop.getProperty("check-in-cal"))).click();//SELECT CHECK IN DATE, WHICH WONT BE VISIABLE IF SEARCH EXECUTES
 		  }
-		  tc = report.createTest("TestCase01");
+		  tc = report.createTest("TestCase04");
 		  tc.info("Test Case Passed"); // passing step information
 	  }
 	  @Test(enabled = true, dependsOnMethods="disabledInDates", description = "To verify if the check out calender allows dates before check in date to be selected")
@@ -94,7 +94,7 @@ public class HSearchTest extends Base {
 			  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();//HIT SEARCH
 			  driver.findElement(By.id(prop.getProperty("check-in-cal"))).click();//SELECT CHECK IN DATE, WHICH WONT BE VISIABLE IF SEARCH EXECUTES
 		  }
-		  tc = report.createTest("TestCase01");
+		  tc = report.createTest("TestCase05");
 		  tc.info("Test Case Passed"); // passing step information
 	  }
 	  @Test(enabled = true, dependsOnMethods="disabledOutDate", description = "To verify output when check in date is of yesterday's")
@@ -106,7 +106,7 @@ public class HSearchTest extends Base {
 		  WebDriverWait wt = new WebDriverWait(driver, 20);
 		  wt.until(ExpectedConditions.visibilityOfElementLocated(By.className(prop.getProperty("no-result"))));//WAIT UNTIL THE LOADING FINISHES AND A SITE ALERT APPEARS
 		  driver.findElement(By.cssSelector(prop.getProperty("exit-no-result"))).click();//GO BACK TO SELECT VALID DATES - EXIT BUTTON
-		  tc = report.createTest("TestCase01");
+		  tc = report.createTest("TestCase06");
 		  tc.info("Test Case Passed"); // passing step information
 	  }
 	  @Test(enabled = true, dependsOnMethods="yestDate", description = "To verify if the gap between check in and check out date is not more than 28 days")
@@ -119,7 +119,7 @@ public class HSearchTest extends Base {
 		  driver.findElement(By.id(prop.getProperty("close-room"))).click();
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();
 		  driver.switchTo().alert().accept();
-		  tc = report.createTest("TestCase01");
+		  tc = report.createTest("TestCase07");
 		  tc.info("Test Case Passed"); // passing step information
 		  
 	  }
@@ -135,7 +135,7 @@ public class HSearchTest extends Base {
 		  WebDriverWait wt = new WebDriverWait(driver, 20);
 		  wt.until(ExpectedConditions.visibilityOfElementLocated(By.className(prop.getProperty("view-btn"))));// WAIT UNTIL VIEW NOW BUTTON LOADS IN HOTEL LIST
 		  driver.findElement(By.className(prop.getProperty("view-btn"))).click();//CLICK VIEW NOW
-		  tc = report.createTest("TestCase01");
+		  tc = report.createTest("TestCase08");
 		tc.info("Test Case Passed"); // passing step information
 	  }
 }
