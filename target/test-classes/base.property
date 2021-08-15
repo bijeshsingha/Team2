@@ -1,0 +1,7 @@
+url = https://www.easemytrip.com/
+
+ckey=webdriver.chrome.driver
+cvalue=src/test/resources/drivers/chromedriver.exe
+
+gkey=webdriver.gecko.driver
+gvalue=src/test/resources/drivers/geckodriver.exe

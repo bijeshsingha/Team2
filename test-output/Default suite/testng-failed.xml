@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="hotelSearch.HSearchTest">
+        <methods>
+          <include name="checkCity"/>
+          <include name="beforeTest"/>
+          <include name="yestDate"/>
+          <include name="sameDates"/>
+          <include name="disabledOutDate"/>
+          <include name="disabledInDates"/>
+          <include name="positiveSearch"/>
+          <include name="report"/>
+          <include name="landingPage"/>
+          <include name="afterTest"/>
+          <include name="daysGap"/>
+        </methods>
+      </class> <!-- hotelSearch.HSearchTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

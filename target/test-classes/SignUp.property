@@ -1,0 +1,21 @@
+url=https://www.easemytrip.com/
+
+ckey=webdriver.chrome.driver
+
+cvalue= D:\\drivers\\chromedriver.exe
+
+account = spnMyAcc
+
+signUp = shwlogn
+
+enter_email = txtEmail
+
+enter_mobile = txtEmail
+
+continue_button = shwotp
+
+otp =txtEmail1
+
+create=OtpLgnBtn
+
+

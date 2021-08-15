@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="21126" started-at="2021-08-15T09:37:42 IST" finished-at="2021-08-15T09:38:03 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="21126" started-at="2021-08-15T09:37:42 IST" finished-at="2021-08-15T09:38:03 IST">
+      <class name="hotelSearch.HSearchTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="beforeTest" is-config="true" duration-ms="5804" started-at="2021-08-15T09:37:42 IST" finished-at="2021-08-15T09:37:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="report()[pri:1, instance:hotelSearch.HSearchTest@1786dec2]" name="report" duration-ms="198" started-at="2021-08-15T09:37:48 IST" finished-at="2021-08-15T09:37:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="landingPage()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="landingPage" duration-ms="2848" started-at="2021-08-15T09:37:48 IST" description="To verify hotel landing page" depends-on-methods="hotelSearch.HSearchTest.report" finished-at="2021-08-15T09:37:51 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- landingPage -->
+        <test-method status="PASS" signature="checkCity()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="checkCity" duration-ms="921" started-at="2021-08-15T09:37:51 IST" description="To verify blank entry in city field
+" depends-on-methods="hotelSearch.HSearchTest.landingPage" finished-at="2021-08-15T09:37:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCity -->
+        <test-method status="PASS" signature="sameDates()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="sameDates" duration-ms="1033" started-at="2021-08-15T09:37:52 IST" description="To verify same check in check out date inputs" depends-on-methods="hotelSearch.HSearchTest.checkCity" finished-at="2021-08-15T09:37:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sameDates -->
+        <test-method status="PASS" signature="disabledInDates()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="disabledInDates" duration-ms="1222" started-at="2021-08-15T09:37:53 IST" description="To verify if the calander disables dates before yesterday" depends-on-methods="hotelSearch.HSearchTest.sameDates" finished-at="2021-08-15T09:37:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- disabledInDates -->
+        <test-method status="PASS" signature="disabledOutDate()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="disabledOutDate" duration-ms="1201" started-at="2021-08-15T09:37:54 IST" description="To verify if the check out calender allows dates before check in date to be selected" depends-on-methods="hotelSearch.HSearchTest.disabledInDates" finished-at="2021-08-15T09:37:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- disabledOutDate -->
+        <test-method status="PASS" signature="yestDate()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="yestDate" duration-ms="3186" started-at="2021-08-15T09:37:55 IST" description="To verify output when check in date is of yesterday&#039;s" depends-on-methods="hotelSearch.HSearchTest.disabledOutDate" finished-at="2021-08-15T09:37:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- yestDate -->
+        <test-method status="PASS" signature="daysGap()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="daysGap" duration-ms="1114" started-at="2021-08-15T09:37:59 IST" description="To verify if the gap between check in and check out date is not more than 28 days" depends-on-methods="hotelSearch.HSearchTest.yestDate" finished-at="2021-08-15T09:38:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- daysGap -->
+        <test-method status="PASS" signature="positiveSearch()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="positiveSearch" duration-ms="2339" started-at="2021-08-15T09:38:00 IST" description="To verify listing of hotels after search using valid inputs" depends-on-methods="hotelSearch.HSearchTest.daysGap" finished-at="2021-08-15T09:38:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- positiveSearch -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:hotelSearch.HSearchTest@1786dec2]" name="afterTest" is-config="true" duration-ms="1187" started-at="2021-08-15T09:38:02 IST" finished-at="2021-08-15T09:38:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- hotelSearch.HSearchTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

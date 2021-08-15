@@ -1,0 +1,22 @@
+url = https://www.easemytrip.com/
+dateTab = input#ddate
+dateId = frth_4_26/08/2021
+dropDown= div.dropdown_n
+selectTravellers= input.plus_box1
+minusTravellers=input.minus_boxADt
+selectChild= input.plus_boxChd
+doneBtn= a.dn_btn
+searchBtn= input.src_btn
+classBtn= a.dropbtn_n10
+premClass= //div[@id='myDropdown_n9']//label[@class='cont_flt'][normalize-space()='Prem.Economy']//span[@class='chk_flt']
+ecoClass= //div[@id='myDropdown_n9']//label[@class='cont_flt'][normalize-space()='Economy']//span[@class='chk_flt']
+doneBtn1= a#tripType
+oneway=/html[1]/body[1]/form[1]/div[14]/div[2]/div[1]/ul[1]/li[1]
+roundtrip=/html[1]/body[1]/form[1]/div[14]/div[2]/div[1]/ul[1]/li[2]
+arrivalDate = //li[@id='frth_6_28/08/2021']
+arrivalBox = //input[@id='rdate']
+yesInsure= //input[@id='chkInsurance']
+yesClass= div.insur-yes
+noInsure= //label[normalize-space()='No, I do not want to insure my trip']
+ckey= webdriver.chrome.driver
+cvalue= src/test/resources/drivers/chromedriver.exe
