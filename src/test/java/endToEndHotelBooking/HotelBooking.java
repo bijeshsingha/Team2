@@ -44,18 +44,23 @@ public class HotelBooking {
 	// Entering data
 	public void enterdata(String fName, String lName, String email, String phno) throws InterruptedException {
 
+		Thread.sleep(1000);
 		// entering first name
 		driver.findElement(e_fn).sendKeys(fName);
 
+		Thread.sleep(1000);
 		// entering second name
 		driver.findElement(e_ln).sendKeys(lName);
 
+		Thread.sleep(1000);
 		// entering email
 		driver.findElement(e_email).sendKeys(email);
 
+		Thread.sleep(1000);
 		// entering ph no
 		driver.findElement(e_phno).sendKeys(phno);
 
+		Thread.sleep(1000);
 		// click on continue to payment
 		driver.findElement(e_payment).click();
 		

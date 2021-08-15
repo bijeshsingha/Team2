@@ -18,41 +18,25 @@ import frameWork.Excel;
 public class RunnerClass extends Base {
 	
 	ExtentTest test;
-	
-	@Test(priority = 1)
-	public void f() {
-		// creating extent report
+
+	// To enter the data of the user before confirm booking
+	@Test(dataProvider = "dp", description = "entering data and checking")
+	public void hotelBooking(String fName, String lName, String email, String phno) throws Exception {
+		//creating extent report
 		report = new ExtentReports();
-				
+						
 		//specifying that we need html report, with name module_name.html
 		report.attachReporter(new ExtentHtmlReporter("EndtoEndHBooking.html"));
-	}
-
-
-	// To verify we are on search result page
-	@Test(dependsOnMethods = "f",description = "To verify results are present")
-	public void resultPage() throws Exception {
-		test = report.createTest("Check the Result Page");
-
+		
+		test = report.createTest("Check End to End Hotel Booking");
+		//click on hotel tab
 		test.info("Select Hotel Tab");
 		new HotelSearch(driver).goToHotelTab();
-		
-
-		test.info("Click on search");
+		//click on search
+		test.info("click on search");
 		new HotelSearch(driver).clickSearch();
-
-
-		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Hotel/HotelListing?"));
-
-		test.info("Test Passed");
-	}
-
-	// To verify the view room button is working
-	@Test(dependsOnMethods = "resultPage", description = "To verify the view room button is working")
-	public void viewRoom() throws Exception {
-
-		test = report.createTest("Check the Result Page");
 		
+		//click on view room
 		test.info("click on view room");
 		new HotelBooking(driver).ClickViewRoom();
 
@@ -60,46 +44,16 @@ public class RunnerClass extends Base {
 		Set<String> ids = driver.getWindowHandles();
 		List<String> idlist = new ArrayList<String>(ids);
 		driver.switchTo().window(idlist.get(1));
-
-		// Assertion
-		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Hotel/HotelDescription?"));
-		test.info("Test passed");
-	}
-
-	// To check select view room button is working
-	@Test(dependsOnMethods = "viewRoom")
-	public void selectRoomButton() throws Exception {
-
-		test = report.createTest("Check the select Room button");
-		try {
-			wt.until(ExpectedConditions.visibilityOfElementLocated(new HotelBooking(driver).e_selectRoom));
-			Assert.assertEquals(true, true);
-		} catch (Exception e) {
-			Assert.assertEquals(false, true);
-		}
-		test.info("Test Passed");
-	}
-
-	// To check Book Now Function
-	@Test(dependsOnMethods = "selectRoomButton")
-	public void bookNow() throws Exception {
-
+		test.info("switch to diff tab");
+		
 		Thread.sleep(2000);
-		test = report.createTest("Check the book now button");
-
 		new HotelBooking(driver).clickBookNow();
-		Assert.assertTrue(driver.findElement(new HotelBooking(driver).e_payment).isDisplayed());
-		test.info("Test Passed");
-	}
-
-	// To enter the data of the user before confirm booking
-	@Test(dataProvider = "dp", description = "entering data and checking", dependsOnMethods = "bookNow")
-	public void dataValid(String fName, String lName, String email, String phno) throws Exception {
+		test.info("click on book now");
+		
 		driver.manage().deleteAllCookies();
-
-		test = report.createTest("Check for all valid data");
-
+		test.info("check for all valid data");
 		new HotelBooking(driver).enterdata(fName, lName, email, phno);
+		Thread.sleep(5000);
 		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Travel/Traveller?"));
 		test.info("Test Passed");
 	}
