@@ -1,5 +1,6 @@
 package login;
 
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -10,18 +11,21 @@ import org.testng.Assert;
 
 public class LoginEmail {
 	WebDriver driver;
+	Scanner sc=new Scanner(System.in);
 	public LoginEmail(WebDriver driver)
 	{
 		this.driver=driver;
 	}
-	By hover=By.id("spnMyAcc");                //element for hovering over the button to login
-	By login=By.id("shwlogn");                 //login option selection
-	By email=By.id("txtEmail");                        //email textbox
-	By password=By.id("txtEmail2");                    //passwordtextbox
-	By emailen=By.id("shwotp");                      //to enter email
-	By passen=By.xpath("//input[@ng-click=\"Authenticate('P')\"]"); //to enter password button
+	By hover=By.id("spnMyAcc");                                              //element for hovering over the button to login
+	By login=By.id("shwlogn");                                              //login option selection
+	By email=By.id("txtEmail");                                            //email textbox
+	By password=By.id("txtEmail2");                                       //passwordtextbox
+	By emailen=By.id("shwotp");                                          //to enter email
+	By passen=By.xpath("//input[@ng-click=\"Authenticate('P')\"]");     //to enter password button
     By logouthover=By.xpath("//div[@class='user_n_icn']");
     By logout=By.linkText("Log Out");
+    By otp=By.xpath("//a[normalize-space()='Login with OTP']");         //to login with otp 
+    By otptxt=By.id("txtEmail1");
 	
 	public void setEmail(String User,String stats) throws InterruptedException
 	{   driver.manage().timeouts().implicitlyWait(124, TimeUnit.SECONDS);
@@ -48,13 +52,24 @@ public class LoginEmail {
 		
 		
 	}
-	public void enPassword(String pass,String status) throws InterruptedException
+	public void enPassword(String pass,String status,int a) throws InterruptedException
 	{   driver.manage().timeouts().implicitlyWait(124, TimeUnit.SECONDS);
+	   if(a==1) {
 		driver.findElement(password).sendKeys(pass);
 		driver.findElement(passen).click();
-		WebDriverWait wt1=new WebDriverWait(driver,5);
+		}
+	   else
+	   {
+		   driver.findElement(otp).click();
+		   System.out.println("Enter OTP");
+		   String otpa = sc.nextLine();	
+		   driver.findElement(otptxt).sendKeys(otpa);
+		   driver.findElement(otp).click();
+		   
+		   
+	   }
 		
-		
+	   WebDriverWait wt1=new WebDriverWait(driver,5);
 
 		
 		try {
@@ -72,10 +87,11 @@ public class LoginEmail {
 			}
 		
 	}
-  public void log_in(String user,String pass,String Status,String stats) throws InterruptedException
+  public void log_in(String user,String pass,String Status,String stats,int otp) throws InterruptedException
   {
 	  setEmail(user,stats);
-	  enPassword(pass,Status);
+	  enPassword(pass,Status,otp);
   }
 
 }
+

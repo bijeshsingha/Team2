@@ -31,25 +31,28 @@ public class HSearchTest extends Base {
 		}
 	 
 	  @Test(enabled = true, dependsOnMethods = "report" ,  description = "To verify hotel landing page")
-	  public void landingPage() throws FileNotFoundException, IOException{	  
+	  public void landingPage() throws FileNotFoundException, IOException, InterruptedException{	  
 		  tc = report.createTest("To verify hotel landing page");
 		  prop.load(new FileInputStream("src/test/resources/hSearch.property"));//LOADING PROPERTY FILE
 			driver.get(prop.getProperty("url"));
 			tc.info("URL opened");
+			Thread.sleep(2000);
 			driver.findElement(By.cssSelector(prop.getProperty("hotelTab"))).click();//CLICKING ON HOTEL IN TITLE BAR
 			tc.info("Clicked on Hotal Tab");
 			tc.pass("Test Passed");
 	  }
 	  @Test(enabled = true, dependsOnMethods="landingPage", description = "To verify blank entry in city field\n")
-	  public void checkCity(){
+	  public void checkCity() throws InterruptedException{
 		  tc = report.createTest("To verify blank entry in city field");
 		  driver.manage().deleteAllCookies(); //DELETE BROWSER COOKIES
 		  driver.findElement(By.className(prop.getProperty("city"))).click();//CLICK CITY DROPDOWN
+		  Thread.sleep(2000);
 		  tc.info("CLICK CITY DROPDOWN");
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click(); //HIT SEARCH
 		  tc.info("HIT SEARCH");
 		  wt.until(ExpectedConditions.alertIsPresent());
 		  tc.info("ALERT FOUND");
+		  Thread.sleep(3000);
 		  driver.switchTo().alert().accept();//ACCEPT ALERT
 		  tc.pass("Test Passed");
 	  }
@@ -59,24 +62,30 @@ public class HSearchTest extends Base {
 		  List<WebElement> ls=driver.findElements(By.className(prop.getProperty("city-list")));//LOAD ALL ELEMENTS OF CITY DROPDWON IN LIST
 		  ls.get(3).click();
 		  driver.findElement(By.linkText(prop.getProperty("same-date"))).click();// SELECT DATE
+		  Thread.sleep(2000);
 		  driver.findElement(By.linkText(prop.getProperty("same-date"))).click();// SELECT DATE
+		  Thread.sleep(2000);
 		  driver.findElement(By.id(prop.getProperty("close-room"))).click();// CLOSE ROOMS OPTION
+		  Thread.sleep(2000);
 		  tc.info("SELECTING SAME DATES AND CLOSE ROOMS OPTION");
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();//HIT SEARCH
 		  tc.info("HIT SEARCH");
 		  wt.until(ExpectedConditions.alertIsPresent());
 		  tc.info("ALERT FOUND");
+		  Thread.sleep(3000);
 		  driver.switchTo().alert().accept();//ACCEPT ALERT
 		  tc.pass("Test Passed");
 	  }
 	  @Test(enabled = true, dependsOnMethods="sameDates", description = "To verify if the calander disables dates before yesterday")
-	  public void disabledInDates(){
+	  public void disabledInDates() throws InterruptedException{
 		  tc = report.createTest("To verify if the calander disables dates before yesterday");
 		  int count=0;
 		  driver.findElement(By.id(prop.getProperty("check-in-cal"))).click();//SELECT CHECK IN DATE
+		  Thread.sleep(2000);
 		  tc.info("SELECTING CHECK IN DATE");
 		  try {			
 			  driver.findElement(By.xpath(prop.getProperty("before-yest"))).click();//SELECT A DATE BEFORE YESTERDAY
+			  Thread.sleep(2000);
 		  }
 		  catch(ElementClickInterceptedException e){
 			  count=1;
@@ -92,12 +101,14 @@ public class HSearchTest extends Base {
 		  tc.pass("Test Passed");
 	  }
 	  @Test(enabled = true, dependsOnMethods="disabledInDates", description = "To verify if the check out calender allows dates before check in date to be selected")
-	  public void disabledOutDate(){
+	  public void disabledOutDate() throws InterruptedException{
 		  tc = report.createTest("To verify if the check out calender allows dates before check in date to be selected");
 		  int count=0;
 		  driver.findElement(By.xpath(prop.getProperty("today-date"))).click();//SELECT TODAY'S DATE
+		  Thread.sleep(3000);
 		  tc.info("SELECTING TODAY'S DATE");
 		  try {			
+			  Thread.sleep(2000);
 			  driver.findElement(By.xpath(prop.getProperty("before-checkin"))).click();//SELECT A DATE BEFORE THE CHECK IN DATE
 			  tc.info("SELECTING A DATE BEFORE THE CHECK IN DATE");
 		  }
@@ -113,11 +124,14 @@ public class HSearchTest extends Base {
 		  tc.pass("Test Passed");
 	  }
 	  @Test(enabled = true, dependsOnMethods="disabledOutDate", description = "To verify output when check in date is of yesterday's")
-	  public void yestDate(){
+	  public void yestDate() throws InterruptedException{
 		  tc = report.createTest("To verify output when check in date is of yesterday's");
 		  driver.findElement(By.id(prop.getProperty("check-in-cal"))).click();//SELECT CHECKIN CALENDER
+		  Thread.sleep(2000);
 		  driver.findElement(By.xpath(prop.getProperty("yest-date"))).click();//SELECT YESTERDAY'S DATE
+		  Thread.sleep(2000);
 		  driver.findElement(By.xpath(prop.getProperty("today-date"))).click();//SELECT TODAY'S DATE
+		  Thread.sleep(2000);
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();
 		  WebDriverWait wt = new WebDriverWait(driver, 20);
 		  wt.until(ExpectedConditions.visibilityOfElementLocated(By.className(prop.getProperty("no-result"))));//WAIT UNTIL THE LOADING FINISHES AND A SITE ALERT APPEARS
@@ -126,28 +140,36 @@ public class HSearchTest extends Base {
 		  tc.pass("Test Passed");
 	  }
 	  @Test(enabled = true, dependsOnMethods="yestDate", description = "To verify if the gap between check in and check out date is not more than 28 days")
-	  public void daysGap(){
+	  public void daysGap() throws InterruptedException{
 		  tc = report.createTest("To verify if the gap between check in and check out date is not more than 28 days");
 		  driver.findElement(By.className(prop.getProperty("city"))).click();
+		  Thread.sleep(2000);
 		  List<WebElement> ls=driver.findElements(By.className(prop.getProperty("city-list")));//LOAD ALL ELEMENTS OF CITY DROPDWON IN LIST
-		  ls.get(3).click();
+		  ls.get(2).click();
 		  driver.findElement(By.xpath(prop.getProperty("today-date"))).click();//SELECT TODAY'S DATE
+		  Thread.sleep(2000);
 		  driver.findElement(By.xpath(prop.getProperty("date-28"))).click();//SELECT A DATE 28 DATES AHEAD
+		  Thread.sleep(2000);
 		  driver.findElement(By.id(prop.getProperty("close-room"))).click();
+		  Thread.sleep(2000);
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();
 		  driver.switchTo().alert().accept();
 		  tc.info("ALERT APPEARS");
 		  tc.pass("Test Passed");
 	  }
 	  @Test(enabled = true, dependsOnMethods="daysGap", description = "To verify listing of hotels after search using valid inputs")
-	  public void positiveSearch(){
+	  public void positiveSearch() throws InterruptedException{
 		  tc = report.createTest("To verify listing of hotels after search using valid inputs");
 		  driver.findElement(By.className(prop.getProperty("city"))).click();
+		  Thread.sleep(2000);
 		  List<WebElement> ls=driver.findElements(By.className(prop.getProperty("city-list")));
 		  ls.get(3).click();
 		  driver.findElement(By.xpath(prop.getProperty("today-date"))).click();//SELECT TODAY'S DATE
+		  Thread.sleep(2000);
 		  driver.findElement(By.xpath(prop.getProperty("valid-date"))).click();//SELECTED A VALID DATE
+		  Thread.sleep(2000);
 		  driver.findElement(By.id(prop.getProperty("close-room"))).click();
+		  Thread.sleep(2000);
 		  driver.findElement(By.cssSelector(prop.getProperty("search"))).click();
 		  WebDriverWait wt = new WebDriverWait(driver, 20);
 		  wt.until(ExpectedConditions.visibilityOfElementLocated(By.className(prop.getProperty("view-btn"))));// WAIT UNTIL VIEW NOW BUTTON LOADS IN HOTEL LIST

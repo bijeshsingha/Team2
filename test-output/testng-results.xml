@@ -1,259 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="16" passed="16">
+<testng-results skipped="0" failed="0" ignored="1" total="10" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="203715" started-at="2021-08-16T13:06:52 IST" finished-at="2021-08-16T13:10:16 IST">
+  <suite name="Default suite" duration-ms="11174" started-at="2021-08-16T15:27:39 IST" finished-at="2021-08-16T15:27:51 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="203715" started-at="2021-08-16T13:06:52 IST" finished-at="2021-08-16T13:10:16 IST">
-      <class name="Flights2.MyFlightScript2">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="beforeTest" is-config="true" duration-ms="5172" started-at="2021-08-16T13:06:52 IST" finished-at="2021-08-16T13:06:57 IST">
+    <test name="Default test" duration-ms="11174" started-at="2021-08-16T15:27:39 IST" finished-at="2021-08-16T15:27:51 IST">
+      <class name="flight1.FlightScript01">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:flight1.FlightScript01@27a5f880]" name="beforeTest" is-config="true" duration-ms="5320" started-at="2021-08-16T15:27:39 IST" finished-at="2021-08-16T15:27:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="f()[pri:1, instance:Flights2.MyFlightScript2@167fdd33]" name="f" duration-ms="101" started-at="2021-08-16T13:06:57 IST" finished-at="2021-08-16T13:06:58 IST">
+        <test-method status="PASS" signature="f()[pri:1, instance:flight1.FlightScript01@27a5f880]" name="f" duration-ms="110" started-at="2021-08-16T15:27:45 IST" finished-at="2021-08-16T15:27:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6828" started-at="2021-08-16T13:06:58 IST" finished-at="2021-08-16T13:07:04 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="aPropLoadMethod()[pri:2, instance:Flights2.MyFlightScript2@167fdd33]" name="aPropLoadMethod" duration-ms="9" started-at="2021-08-16T13:07:04 IST" depends-on-methods="Flights2.MyFlightScript2.f" finished-at="2021-08-16T13:07:04 IST">
+        <test-method status="PASS" signature="aPropLoadMethod()[pri:2, instance:flight1.FlightScript01@27a5f880]" name="aPropLoadMethod" duration-ms="944" started-at="2021-08-16T15:27:45 IST" finished-at="2021-08-16T15:27:46 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aPropLoadMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6932" started-at="2021-08-16T13:07:04 IST" finished-at="2021-08-16T13:07:11 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="checkRoundtrip()[pri:1, instance:Flights2.MyFlightScript2@167fdd33]" name="checkRoundtrip" duration-ms="1775" started-at="2021-08-16T13:07:11 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:07:13 IST">
+        <test-method status="PASS" signature="checkRoundtrip()[pri:2, instance:flight1.FlightScript01@27a5f880]" name="checkRoundtrip" duration-ms="140" started-at="2021-08-16T15:27:46 IST" depends-on-methods="flight1.FlightScript01.aPropLoadMethod" finished-at="2021-08-16T15:27:46 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkRoundtrip -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6916" started-at="2021-08-16T13:07:13 IST" finished-at="2021-08-16T13:07:20 IST">
+        <test-method status="PASS" signature="tc_date01()[pri:2, instance:flight1.FlightScript01@27a5f880]" name="tc_date01" duration-ms="212" started-at="2021-08-16T15:27:46 IST" depends-on-methods="flight1.FlightScript01.checkRoundtrip" finished-at="2021-08-16T15:27:46 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="checkOneway()[pri:2, instance:Flights2.MyFlightScript2@167fdd33]" name="checkOneway" duration-ms="1139" started-at="2021-08-16T13:07:20 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:07:21 IST">
+        </test-method> <!-- tc_date01 -->
+        <test-method status="PASS" signature="tc_date02()[pri:0, instance:flight1.FlightScript01@27a5f880]" name="tc_date02" duration-ms="179" started-at="2021-08-16T15:27:46 IST" depends-on-methods="flight1.FlightScript01.tc_date01" finished-at="2021-08-16T15:27:46 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkOneway -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="7281" started-at="2021-08-16T13:07:21 IST" finished-at="2021-08-16T13:07:28 IST">
+        </test-method> <!-- tc_date02 -->
+        <test-method status="PASS" signature="tc_traveller9()[pri:0, instance:flight1.FlightScript01@27a5f880]" name="tc_traveller9" duration-ms="667" started-at="2021-08-16T15:27:46 IST" depends-on-methods="flight1.FlightScript01.tc_date02" finished-at="2021-08-16T15:27:47 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="checkMulticity()[pri:3, instance:Flights2.MyFlightScript2@167fdd33]" name="checkMulticity" duration-ms="2839" started-at="2021-08-16T13:07:28 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:07:31 IST">
+        </test-method> <!-- tc_traveller9 -->
+        <test-method status="PASS" signature="tc_traveller01()[pri:0, instance:flight1.FlightScript01@27a5f880]" name="tc_traveller01" duration-ms="1101" started-at="2021-08-16T15:27:47 IST" depends-on-methods="flight1.FlightScript01.tc_traveller9" finished-at="2021-08-16T15:27:48 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkMulticity -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6771" started-at="2021-08-16T13:07:31 IST" finished-at="2021-08-16T13:07:38 IST">
+        </test-method> <!-- tc_traveller01 -->
+        <test-method status="PASS" signature="tc_class01()[pri:0, instance:flight1.FlightScript01@27a5f880]" name="tc_class01" duration-ms="215" started-at="2021-08-16T15:27:48 IST" depends-on-methods="flight1.FlightScript01.tc_traveller01" finished-at="2021-08-16T15:27:48 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="webCheckIn()[pri:4, instance:Flights2.MyFlightScript2@167fdd33]" name="webCheckIn" duration-ms="6808" started-at="2021-08-16T13:07:38 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:07:45 IST">
+        </test-method> <!-- tc_class01 -->
+        <test-method status="PASS" signature="tc_search01()[pri:0, instance:flight1.FlightScript01@27a5f880]" name="tc_search01" duration-ms="1227" started-at="2021-08-16T15:27:48 IST" depends-on-methods="flight1.FlightScript01.tc_class01" finished-at="2021-08-16T15:27:50 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- webCheckIn -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6797" started-at="2021-08-16T13:07:45 IST" finished-at="2021-08-16T13:07:52 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="CheckDefence()[pri:5, instance:Flights2.MyFlightScript2@167fdd33]" name="CheckDefence" duration-ms="6670" started-at="2021-08-16T13:07:52 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:07:58 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckDefence -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6892" started-at="2021-08-16T13:07:58 IST" finished-at="2021-08-16T13:08:05 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="checkFlightDetails()[pri:6, instance:Flights2.MyFlightScript2@167fdd33]" name="checkFlightDetails" duration-ms="3660" started-at="2021-08-16T13:08:05 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:08:09 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkFlightDetails -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="7036" started-at="2021-08-16T13:08:09 IST" finished-at="2021-08-16T13:08:16 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="reviewValidEmail(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:Flights2.MyFlightScript2@167fdd33]" name="reviewValidEmail" duration-ms="7781" started-at="2021-08-16T13:08:16 IST" data-provider="dp1" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:08:24 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kenadams@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ken]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Adams]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9.999992222E9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reviewValidEmail -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="7117" started-at="2021-08-16T13:08:24 IST" finished-at="2021-08-16T13:08:31 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="reviewInvalidEmail()[pri:8, instance:Flights2.MyFlightScript2@167fdd33]" name="reviewInvalidEmail" duration-ms="7490" started-at="2021-08-16T13:08:31 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:08:39 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reviewInvalidEmail -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="7034" started-at="2021-08-16T13:08:39 IST" finished-at="2021-08-16T13:08:46 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="reviewdInsuranceYes(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:9, instance:Flights2.MyFlightScript2@167fdd33]" name="reviewdInsuranceYes" duration-ms="8575" started-at="2021-08-16T13:08:46 IST" data-provider="dp1" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:08:55 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kenadams@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ken]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Adams]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9.999992222E9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reviewdInsuranceYes -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="7095" started-at="2021-08-16T13:08:55 IST" finished-at="2021-08-16T13:09:02 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="reviewdInsuranceNo(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:Flights2.MyFlightScript2@167fdd33]" name="reviewdInsuranceNo" duration-ms="8596" started-at="2021-08-16T13:09:02 IST" data-provider="dp1" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:09:10 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kenadams@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ken]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Adams]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9.999992222E9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reviewdInsuranceNo -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="7026" started-at="2021-08-16T13:09:10 IST" finished-at="2021-08-16T13:09:17 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="travellerSection1(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:Flights2.MyFlightScript2@167fdd33]" name="travellerSection1" duration-ms="14621" started-at="2021-08-16T13:09:17 IST" data-provider="dp1" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:09:32 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kenadams@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ken]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Adams]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9.999992222E9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- travellerSection1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="7091" started-at="2021-08-16T13:09:32 IST" finished-at="2021-08-16T13:09:39 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="travellerSection2(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:12, instance:Flights2.MyFlightScript2@167fdd33]" name="travellerSection2" duration-ms="11201" started-at="2021-08-16T13:09:39 IST" data-provider="dp1" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:09:50 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kenadams@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ken]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Adams]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9.999992222E9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- travellerSection2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6962" started-at="2021-08-16T13:09:50 IST" finished-at="2021-08-16T13:09:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="checkSameLocation()[pri:13, instance:Flights2.MyFlightScript2@167fdd33]" name="checkSameLocation" duration-ms="3269" started-at="2021-08-16T13:09:57 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:10:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkSameLocation -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6887" started-at="2021-08-16T13:10:00 IST" finished-at="2021-08-16T13:10:07 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="maxTravelersCheck()[pri:14, instance:Flights2.MyFlightScript2@167fdd33]" name="maxTravelersCheck" duration-ms="701" started-at="2021-08-16T13:10:07 IST" depends-on-methods="Flights2.MyFlightScript2.aPropLoadMethod" finished-at="2021-08-16T13:10:08 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- maxTravelersCheck -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterMethod" is-config="true" duration-ms="6775" started-at="2021-08-16T13:10:08 IST" finished-at="2021-08-16T13:10:15 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:Flights2.MyFlightScript2@167fdd33]" name="afterTest" is-config="true" duration-ms="1159" started-at="2021-08-16T13:10:15 IST" finished-at="2021-08-16T13:10:16 IST">
+        </test-method> <!-- tc_search01 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:flight1.FlightScript01@27a5f880]" name="afterTest" is-config="true" duration-ms="1008" started-at="2021-08-16T15:27:50 IST" finished-at="2021-08-16T15:27:51 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- Flights2.MyFlightScript2 -->
+      </class> <!-- flight1.FlightScript01 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

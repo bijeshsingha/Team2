@@ -43,7 +43,7 @@ public class FlightScript01 extends Base{
 		
 		test.info("Test Passed, property file loaded.");
 
-		
+		test.pass("Test passed");
 	}
 	
 	// for one way trip
@@ -58,7 +58,7 @@ public class FlightScript01 extends Base{
 		driver.findElement(By.xpath(prop.getProperty("oneway"))).click();
 		Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 		
-		test.info("Test Passed");
+		test.pass("Test Passed");
 
 	}
 	
@@ -72,7 +72,7 @@ public class FlightScript01 extends Base{
 			driver.findElement(By.xpath(prop.getProperty("roundtrip"))).click();
 			Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 
-			test.info("Test Passed");
+			test.pass("Test Passed");
 		}
 	
 	// departure date
@@ -89,7 +89,7 @@ public class FlightScript01 extends Base{
 		//Thread.sleep(2000);
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 
-		  test.info("Test Passed");
+		  test.pass("Test Passed");
 	}
 	
 	// arrival date
@@ -106,7 +106,7 @@ public class FlightScript01 extends Base{
 
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 		  
-		  test.info("Test Passed");
+		  test.pass("Test Passed");
 	}
 	
 	// to check if more than 9 travellers are taken into consideration
@@ -132,7 +132,7 @@ public class FlightScript01 extends Base{
 		  //Thread.sleep(2000);
 			  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
   
-			  test.info("Test Passed");
+			  test.pass("Test Passed");
 			}
 
 	// to select travellers
@@ -152,7 +152,7 @@ public class FlightScript01 extends Base{
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 
 		//Thread.sleep(2000);
-		  test.info("Test Passed");
+		  test.pass("Test Passed");
 	}
 	
 	// to decide the flying class
@@ -170,7 +170,7 @@ public class FlightScript01 extends Base{
 		  driver.findElement(By.cssSelector(prop.getProperty("doneBtn1"))).click();
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 
-		  test.info("Test Passed");
+		  test.pass("Test Passed");
 	  }
 	  
 	// to search the flights
@@ -184,22 +184,7 @@ public class FlightScript01 extends Base{
 	      //Thread.sleep(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("FlightList"));
 
-			test.info("Test Passed");
+			test.pass("Test Passed");
 	  }
-	
-		/*
-		 * @Test(enabled=false, priority=2) public void tc_reviewdetails03() throws
-		 * Exception {
-		 * driver.findElement(By.xpath(prop.getProperty("yesInsure"))).click();
-		 * 
-		 * }
-		 * 
-		 * @Test(enabled=false, priority=2) public void tc_reviewdetails04() throws
-		 * Exception {
-		 * driver.findElement(By.xpath(prop.getProperty("noInsure"))).click();
-		 * 
-		 * }
-		 */
-	
 
 }
