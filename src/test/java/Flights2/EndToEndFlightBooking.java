@@ -2,6 +2,7 @@ package Flights2;
 
 import java.io.FileInputStream;
 import java.util.Properties;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -9,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -35,9 +37,24 @@ public class EndToEndFlightBooking {
 		prop.load(new FileInputStream("src/test/resources/f2settings.property"));
 
 		// set the path of .exe file
-		System.setProperty(prop.getProperty("ckey"), prop.getProperty("cvalue"));
-		driver = new ChromeDriver();
-
+		System.out.println("Select a browser: ");
+		System.out.println("1.Chrome");
+		System.out.println("2.Firefox");
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		switch (n) {
+		case 1: {
+			System.setProperty(prop.getProperty("ckey"), prop.getProperty("cvalue"));
+			driver = new ChromeDriver();
+			break;
+		}
+		case 2: {
+			System.setProperty(prop.getProperty("gkey"), prop.getProperty("gvalue"));
+			driver = new FirefoxDriver();
+		}
+		}
+		
 		// maximize the window
 		driver.manage().window().maximize();
 

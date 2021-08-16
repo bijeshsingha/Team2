@@ -19,7 +19,7 @@ public class FlightScript01 extends Base{
 	
     Properties prop = new Properties();
 	ExtentTest test;
-	
+
 	@Test(priority = 1)
 	public void f() {
 		// creating extent report
@@ -57,7 +57,7 @@ public class FlightScript01 extends Base{
 		// to click one way button 
 		driver.findElement(By.xpath(prop.getProperty("oneway"))).click();
 		Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
-		
+		Thread.sleep(2000);
 		test.pass("Test Passed");
 
 	}
@@ -71,7 +71,7 @@ public class FlightScript01 extends Base{
 			test.info("Select round trip option");
 			driver.findElement(By.xpath(prop.getProperty("roundtrip"))).click();
 			Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
-
+			Thread.sleep(2000);
 			test.pass("Test Passed");
 		}
 	
@@ -86,7 +86,7 @@ public class FlightScript01 extends Base{
 		driver.findElement(By.cssSelector(prop.getProperty("dateTab"))).click();
 		// to select departure date from the calendar
 		driver.findElement(By.id(prop.getProperty("dateId"))).click();
-		//Thread.sleep(2000);
+		Thread.sleep(2000);
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 
 		  test.pass("Test Passed");
@@ -103,7 +103,7 @@ public class FlightScript01 extends Base{
 		driver.findElement(By.xpath(prop.getProperty("arrivalBox"))).click();
 		// to select arrival date from the calendar
 		driver.findElement(By.xpath(prop.getProperty("arrivalDate"))).click();		
-
+		Thread.sleep(2000);
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 		  
 		  test.pass("Test Passed");
@@ -119,19 +119,19 @@ public class FlightScript01 extends Base{
 	      for(int i=0;i<8;i++)
 	      {
 	    	  driver.findElement(By.cssSelector(prop.getProperty("selectTravellers"))).click();
-	    	  
+	    	  Thread.sleep(2000);
 	      }
     	  driver.findElement(By.cssSelector(prop.getProperty("selectChild"))).click();
 
-	      //Thread.sleep(3000);
+	      Thread.sleep(3000);
     	  // to click "OK" on the alert generated
 	      Alert ac= driver.switchTo().alert();
 	       String txt=ac.getText();
 	       System.out.println(txt);
 	       ac.accept();      
-		  //Thread.sleep(2000);
+		 Thread.sleep(2000);
 			  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
-  
+			  Thread.sleep(2000);
 			  test.pass("Test Passed");
 			}
 
@@ -151,7 +151,7 @@ public class FlightScript01 extends Base{
 		driver.findElement(By.cssSelector(prop.getProperty("doneBtn"))).click();
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
 
-		//Thread.sleep(2000);
+		Thread.sleep(2000);
 		  test.pass("Test Passed");
 	}
 	
@@ -169,7 +169,7 @@ public class FlightScript01 extends Base{
 		  // to click on done button 
 		  driver.findElement(By.cssSelector(prop.getProperty("doneBtn1"))).click();
 		  Assert.assertTrue(driver.getCurrentUrl().contains("easemytrip"));
-
+		  Thread.sleep(2000);
 		  test.pass("Test Passed");
 	  }
 	  
@@ -181,7 +181,7 @@ public class FlightScript01 extends Base{
 		test.info("Click on the search button");
 		
 	      driver.findElement(By.cssSelector(prop.getProperty("searchBtn"))).click();
-	      //Thread.sleep(2000);
+	      Thread.sleep(2000);
 			Assert.assertTrue(driver.getCurrentUrl().contains("FlightList"));
 
 			test.pass("Test Passed");

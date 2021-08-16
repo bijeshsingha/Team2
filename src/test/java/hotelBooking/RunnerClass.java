@@ -16,7 +16,7 @@ import frameWork.Base;
 import frameWork.Excel;
 
 public class RunnerClass extends Base {
-	
+
 	ExtentTest test;
 	
 	@Test(priority = 1)

@@ -29,7 +29,7 @@ public class HSearchTest extends Base {
 			// specifying that we need html report
 			report.attachReporter(new ExtentHtmlReporter("HotelSearch.html"));
 		}
-	 
+	
 	  @Test(enabled = true, dependsOnMethods = "report" ,  description = "To verify hotel landing page")
 	  public void landingPage() throws FileNotFoundException, IOException, InterruptedException{	  
 		  tc = report.createTest("To verify hotel landing page");

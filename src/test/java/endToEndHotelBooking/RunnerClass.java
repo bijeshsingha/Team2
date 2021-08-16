@@ -42,6 +42,7 @@ public class RunnerClass extends Base {
 		// To switch to a diff tab
 		Set<String> ids = driver.getWindowHandles();
 		List<String> idlist = new ArrayList<String>(ids);
+		Thread.sleep(2000);
 		driver.switchTo().window(idlist.get(1));
 		test.info("switch to diff tab");
 		

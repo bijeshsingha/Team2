@@ -22,7 +22,6 @@ public class RunnerLogin extends Base {
 	 driver.manage().deleteAllCookies();
 
 	 //Refresh the page
-
 	 driver.navigate().refresh();
 
 	 }

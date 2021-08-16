@@ -1,5 +1,9 @@
 ckey=webdriver.chrome.driver
 cvalue=src/test/resources/drivers/chromedriver.exe
+
+gkey=webdriver.gecko.driver
+gvalue=src/test/resources/drivers/geckodriver.exe
+
 url=https://www.easemytrip.com/
 
 oneway=//li[@class='border-lft flig-show click-one bg-color']

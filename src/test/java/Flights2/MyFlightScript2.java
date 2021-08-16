@@ -20,10 +20,10 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import frameWork.Base;
 
 public class MyFlightScript2 extends Base {
-
+	
 	Properties prop = new Properties();
 	ExtentTest test;
-	
+
 	@AfterMethod
 	public void afterMethod() throws Exception
 	{
