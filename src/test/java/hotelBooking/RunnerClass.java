@@ -36,8 +36,6 @@ public class RunnerClass extends Base {
 		test.info("Select Hotel Tab");
 		new HotelSearch(driver).goToHotelTab();
 		
-		
-
 		test.info("Click on search");
 		new HotelSearch(driver).clickSearch();
 
@@ -46,7 +44,8 @@ public class RunnerClass extends Base {
 
 		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Hotel/HotelListing?"));
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
+		
 	}
 
 	// To verify the view room button is working
@@ -62,24 +61,28 @@ public class RunnerClass extends Base {
 		Set<String> ids = driver.getWindowHandles();
 		List<String> idlist = new ArrayList<String>(ids);
 		driver.switchTo().window(idlist.get(1));
+		
+		test.info("Switched to a diff tab");
 
 		// Assertion
 		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Hotel/HotelDescription?"));
-		test.info("Test passed");
+		test.pass("Test Passed");
 	}
 
 	// To check select view room button is working
 	@Test(dependsOnMethods = "viewRoom")
 	public void selectRoomButton() throws Exception {
-
+		
 		test = report.createTest("Check the select Room button");
 		try {
+			//Checking for select room button
 			wt.until(ExpectedConditions.visibilityOfElementLocated(new HotelBooking(driver).e_selectRoom));
+			test.info("Select Room button is found");
 			Assert.assertEquals(true, true);
 		} catch (Exception e) {
 			Assert.assertEquals(false, true);
 		}
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// To check Book Now Function
@@ -88,10 +91,12 @@ public class RunnerClass extends Base {
 
 		Thread.sleep(2000);
 		test = report.createTest("Check the book now button");
-
+		
+		//Click on book now button
 		new HotelBooking(driver).clickBookNow();
+		test.info("Clicked on Book Now button");
 		Assert.assertTrue(driver.findElement(new HotelBooking(driver).e_payment).isDisplayed());
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// To enter the data of the user before confirm booking
@@ -100,10 +105,12 @@ public class RunnerClass extends Base {
 		driver.manage().deleteAllCookies();
 
 		test = report.createTest("Check for all valid data");
-
+		Thread.sleep(2000);
 		new HotelBooking(driver).enterdata(fName, lName, email, phno);
+		Thread.sleep(2000);
+		test.info("Data entered successfully");
 		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Travel/Traveller?"));
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// Data Provider for Valid test case
@@ -125,15 +132,16 @@ public class RunnerClass extends Base {
 
 		test = report.createTest("Check empty first name");
 
-		driver.navigate().back();
-		new HotelBooking(driver).clickBookNow();
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 		new HotelBooking(driver).enterdata("", lName, email, phno);
+		test.info("Data entered successfully");
 		wt.until(ExpectedConditions.alertIsPresent());
+		test.info("Alert Found");
 		driver.switchTo().alert();
-
+		Thread.sleep(2000);
 		Assert.assertEquals(driver.switchTo().alert().getText(), "please enter the first name of guest 1");
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// Data Provider for invalid test case 1
@@ -156,15 +164,16 @@ public class RunnerClass extends Base {
 
 		test = report.createTest("Check for empty last name");
 
-		driver.navigate().back();
-		new HotelBooking(driver).clickBookNow();
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 		new HotelBooking(driver).enterdata(fName, "", email, phno);
+		test.info("Data entered successfully");
 		wt.until(ExpectedConditions.alertIsPresent());
+		test.info("Alert Found");
 		driver.switchTo().alert();
-
+		Thread.sleep(2000);
 		Assert.assertEquals(driver.switchTo().alert().getText(), "please enter the last name of guest 1");
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// Data Provider for invalid test case 2
@@ -187,15 +196,16 @@ public class RunnerClass extends Base {
 
 		test = report.createTest("Check for invalid email");
 
-		driver.navigate().back();
-		new HotelBooking(driver).clickBookNow();
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 		new HotelBooking(driver).enterdata(fName, lName, email, phno);
+		test.info("Data entered successfully");
 		wt.until(ExpectedConditions.alertIsPresent());
+		test.info("Alert Found");
 		driver.switchTo().alert();
-
+		Thread.sleep(2000);
 		Assert.assertEquals(driver.switchTo().alert().getText(), "please enter the valid emailid");
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// Data Provider for invalid test case 3
@@ -218,13 +228,13 @@ public class RunnerClass extends Base {
 
 		test = report.createTest("Check the Invalid Phone number");
 
-		driver.navigate().back();
-		new HotelBooking(driver).clickBookNow();
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 		new HotelBooking(driver).enterdata(fName, lName, email, phno);
-
+		Thread.sleep(5000);
+		test.info("Data entered successfully");
 		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Travel/Traveller?"));
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// Data Provider for invalid test case 4

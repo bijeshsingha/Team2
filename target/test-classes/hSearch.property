@@ -11,9 +11,10 @@ check-in-cal = htl_dates
 before-yest = //body[1]/div[12]/div[1]/table[1]/tbody[1]/tr[2]/td[5]
 valid-date = //body[1]/div[12]/div[1]/table[1]/tbody[1]/tr[3]/td[3]
 today-date = //td[contains(@class,'ui-datepicker-today')]
-yest-date = //body[1]/div[12]/div[1]/table[1]/tbody[1]/tr[2]/td[7]
+
+yest-date = //a[normalize-space()='15']
 before-checkin = //body[1]/div[12]/div[1]/table[1]/tbody[1]/tr[2]/td[5]
 no-result = not-search
 exit-no-result = a.modi-srec3
-date-28 = //a[normalize-space()='11']
+date-28 = //a[normalize-space()='12']
 view-btn = bookhBtn

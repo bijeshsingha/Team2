@@ -67,7 +67,7 @@ public class MyFlightScript2 extends Base {
 		// loading the property file
 		prop.load(new FileInputStream("src/test/resources/f2settings.property"));
 		
-		test.info("Test Passed, property file loaded.");
+		test.pass("Test Passed, property file loaded.");
 	}
 
 	// tc_type_of_flight01 - checking one way trip option
@@ -86,7 +86,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(driver.getCurrentUrl().contains("FlightList"), "Flight page not loaded");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 
 	}
 
@@ -111,7 +111,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(driver.getCurrentUrl().contains("FlightList"), "Flight Page not loaded");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_type_of_flight03 - checking multi-city option
@@ -158,7 +158,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(driver.getCurrentUrl().contains("multicity"), "Flight Page not loaded");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 
 	}
 
@@ -181,7 +181,7 @@ public class MyFlightScript2 extends Base {
 		// load the homepage again
 		driver.navigate().back();
 		
-		test.info("Test Passed");
+		test.pass("Test Passed");
 
 	}
 
@@ -220,7 +220,7 @@ public class MyFlightScript2 extends Base {
 		driver.findElement(By.className(prop.getProperty("defense_close_class"))).click();
 		Thread.sleep(3000);
 		
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_flight_book01 - To obtain flight details for a selected flight
@@ -240,7 +240,7 @@ public class MyFlightScript2 extends Base {
 		test.info("Ckeck if Details are visible");
 		Assert.assertTrue(driver.getCurrentUrl().contains("Review"), "Defect in List of Flights");
 		
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_reviewdetails01 - To enter a valid email and go ahead
@@ -273,7 +273,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(countrycode.contains("91"), "Defect in Review page email input");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_reviewdetails02 - To enter an invalid email and go ahead
@@ -301,7 +301,7 @@ public class MyFlightScript2 extends Base {
 		test.info("Check if next tab is not loaded");
 		Assert.assertTrue(driver.getCurrentUrl().contains("Review"), "Defect in Review page email input");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_reviewdetails03 - To check booking with Insurance option 'Yes'
@@ -331,7 +331,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(countrycode.contains("91"), "Defect in Review page insurance option");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 
 	}
 
@@ -363,7 +363,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(countrycode.contains("91"), "Defect in Review page insurance option");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 
 	}
 
@@ -419,7 +419,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(str.contains("MakevalidateCard"), "Defect in Traveller page contact input");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_travellers01 - To enter a invalid contact number and try to go ahead
@@ -468,7 +468,7 @@ public class MyFlightScript2 extends Base {
 
 		Assert.assertTrue(countrycode.contains("91"), "Defect in Traveller page contact input");
 		
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_location01 - To check booking with same departure and destination location
@@ -494,7 +494,7 @@ public class MyFlightScript2 extends Base {
 		Thread.sleep(3000);
 		alert.accept();
 		
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// tc_max_travellers01 - To increase the travellers count till 10 and check for
@@ -518,7 +518,7 @@ public class MyFlightScript2 extends Base {
 		String val = driver.findElement(By.id(prop.getProperty("adult_id"))).getAttribute("value");
 
 		Assert.assertEquals(val, "9");
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	@DataProvider

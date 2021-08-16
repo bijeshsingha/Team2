@@ -3,7 +3,6 @@ package endToEndHotelBooking;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -55,7 +54,7 @@ public class RunnerClass extends Base {
 		new HotelBooking(driver).enterdata(fName, lName, email, phno);
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getCurrentUrl().contains("newhotel/Travel/Traveller?"));
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	// Data Provider

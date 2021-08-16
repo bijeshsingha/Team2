@@ -118,7 +118,7 @@ public class EndToEndFlightBooking {
 
 		Assert.assertTrue(str.contains("MakevalidateCard"), "Website not working for end to end flight booking");
 
-		test.info("Test Passed");
+		test.pass("Test Passed");
 	}
 
 	@DataProvider
